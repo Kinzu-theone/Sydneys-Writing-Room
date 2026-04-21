@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Quick Notes</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <!-- Hanging sloth with tree branch -->
+      <div class="sloth-hanger">
+        <svg width="160" height="155" viewBox="0 0 160 155" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+          <!-- Tree trunk (left side, going up off canvas) -->
+          <path d="M10 60 Q8 30 12 0" stroke="#6b4226" stroke-width="12" stroke-linecap="round" fill="none"/>
+          <!-- Trunk texture -->
+          <path d="M9 50 Q7 40 11 28" stroke="#5a3520" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.4"/>
+
+          <!-- Main branch extending right -->
+          <path d="M12 28 Q40 18 80 22 Q100 24 110 20" stroke="#6b4226" stroke-width="10" stroke-linecap="round" fill="none"/>
+          <!-- Branch underside shading -->
+          <path d="M12 30 Q40 22 80 26 Q100 28 110 24" stroke="#5a3520" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.4"/>
+
+          <!-- Small sub-branch top left -->
+          <path d="M30 22 Q26 10 20 4" stroke="#6b4226" stroke-width="6" stroke-linecap="round" fill="none"/>
+          <!-- Small sub-branch top right -->
+          <path d="M75 22 Q80 10 88 5" stroke="#6b4226" stroke-width="5" stroke-linecap="round" fill="none"/>
+
+          <!-- Leaves on branch -->
+          <ellipse cx="22" cy="4" rx="9" ry="6" fill="#5a9e4a" transform="rotate(-20 22 4)"/>
+          <ellipse cx="14" cy="8" rx="7" ry="5" fill="#4e8f3e" transform="rotate(15 14 8)"/>
+          <ellipse cx="30" cy="2" rx="7" ry="5" fill="#6ab85a" transform="rotate(-35 30 2)"/>
+          <ellipse cx="88" cy="5" rx="9" ry="6" fill="#5a9e4a" transform="rotate(20 88 5)"/>
+          <ellipse cx="98" cy="9" rx="7" ry="5" fill="#4e8f3e" transform="rotate(-15 98 9)"/>
+          <ellipse cx="80" cy="2" rx="7" ry="5" fill="#6ab85a" transform="rotate(30 80 2)"/>
+          <ellipse cx="108" cy="16" rx="8" ry="5" fill="#5a9e4a" transform="rotate(-10 108 16)"/>
+          <ellipse cx="116" cy="22" rx="6" ry="4" fill="#6ab85a" transform="rotate(25 116 22)"/>
+
+          <!-- Vine hanging from branch (organic, slightly wavy) -->
+          <path d="M72 24 Q70 32 72 40 Q74 48 72 56" stroke="#4a7c35" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <!-- Vine texture/nodes -->
+          <circle cx="72" cy="32" r="2" fill="#3d6a2a"/>
+          <circle cx="72" cy="44" r="2" fill="#3d6a2a"/>
+          <!-- Tiny leaves on vine -->
+          <ellipse cx="76" cy="36" rx="5" ry="3" fill="#5a9e4a" transform="rotate(30 76 36)" opacity="0.9"/>
+          <ellipse cx="68" cy="50" rx="5" ry="3" fill="#4e8f3e" transform="rotate(-25 68 50)" opacity="0.9"/>
+
+          <!-- Left arm reaching up to vine -->
+          <path d="M52 88 Q44 72 56 58" stroke="#c9a87c" stroke-width="5" stroke-linecap="round" fill="none"/>
+          <!-- Right arm reaching up to vine -->
+          <path d="M80 88 Q88 72 76 58" stroke="#c9a87c" stroke-width="5" stroke-linecap="round" fill="none"/>
+
+          <!-- Left claws gripping vine -->
+          <path d="M56 58 Q51 52 49 47" stroke="#8b6040" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <path d="M56 58 Q54 51 55 46" stroke="#8b6040" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <path d="M56 58 Q59 52 61 48" stroke="#8b6040" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <!-- Right claws gripping vine -->
+          <path d="M76 58 Q81 52 83 47" stroke="#8b6040" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <path d="M76 58 Q78 51 77 46" stroke="#8b6040" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <path d="M76 58 Q73 52 71 48" stroke="#8b6040" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+          <!-- Body -->
+          <ellipse cx="66" cy="112" rx="17" ry="14" fill="#c9a87c"/>
+          <!-- Tummy -->
+          <ellipse cx="66" cy="114" rx="9" ry="8" fill="#e8c9a0"/>
+          <!-- Head -->
+          <ellipse cx="66" cy="86" rx="14" ry="13" fill="#d4b896"/>
+          <!-- Face mask -->
+          <ellipse cx="66" cy="89" rx="9" ry="8" fill="#f0dfc0"/>
+          <!-- Left ear -->
+          <ellipse cx="53" cy="79" rx="5" ry="5" fill="#c9a87c"/>
+          <ellipse cx="53" cy="79" rx="3" ry="3" fill="#e8c9a0"/>
+          <!-- Right ear -->
+          <ellipse cx="79" cy="79" rx="5" ry="5" fill="#c9a87c"/>
+          <ellipse cx="79" cy="79" rx="3" ry="3" fill="#e8c9a0"/>
+          <!-- Eyes (sleepy/content) -->
+          <path d="M60 86 Q62 83 64 86" stroke="#4a2c0a" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <path d="M68 86 Q70 83 72 86" stroke="#4a2c0a" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <!-- Nose -->
+          <ellipse cx="66" cy="91" rx="2.2" ry="1.5" fill="#b07850"/>
+          <!-- Smile -->
+          <path d="M61 94 Q66 98 71 94" stroke="#8b5e3c" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <!-- Blush -->
+          <ellipse cx="56" cy="91" rx="3.5" ry="2.2" fill="#f4a0b0" opacity="0.6"/>
+          <ellipse cx="76" cy="91" rx="3.5" ry="2.2" fill="#f4a0b0" opacity="0.6"/>
+
+          <!-- Legs hanging down -->
+          <path d="M57 124 Q52 136 54 148" stroke="#c9a87c" stroke-width="5" stroke-linecap="round" fill="none"/>
+          <path d="M74 124 Q79 136 77 148" stroke="#c9a87c" stroke-width="5" stroke-linecap="round" fill="none"/>
+          <!-- Feet -->
+          <ellipse cx="54" cy="150" rx="6" ry="3.5" fill="#b08060"/>
+          <ellipse cx="77" cy="150" rx="6" ry="3.5" fill="#b08060"/>
+        </svg>
+      </div>
+      <h1>Sydney's Seraphic Writing Room</h1>
+    </div>
+    <!-- Bow -->
+    <div class="bow-wrap">
+      <svg width="380" height="200" viewBox="0 0 380 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+        <!-- ===== LEFT TAIL ===== -->
+        <path d="M178 100 C168 120 154 142 142 168 Q138 178 134 188 L142 178 Q150 168 154 180 C162 162 172 138 180 112 Z"
+          fill="#f2b8cc" fill-opacity="0.6" stroke="#c07898" stroke-width="2" stroke-linejoin="round"/>
+        <!-- Left tail sheen -->
+        <path d="M174 108 C165 128 155 150 147 172" stroke="#fce4ee" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.5"/>
+
+        <!-- ===== RIGHT TAIL ===== -->
+        <path d="M202 100 C212 120 226 142 238 168 Q242 178 246 188 L238 178 Q230 168 226 180 C218 162 208 138 200 112 Z"
+          fill="#f2b8cc" fill-opacity="0.6" stroke="#c07898" stroke-width="2" stroke-linejoin="round"/>
+        <!-- Right tail sheen -->
+        <path d="M206 108 C215 128 225 150 233 172" stroke="#fce4ee" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.5"/>
+
+        <!-- ===== LEFT LOOP (ribbon strip — open in the middle) ===== -->
+        <path d="
+          M 178 82
+          C 162 55, 118 10, 74 20
+          C 38 28, 25 62, 40 90
+          C 52 112, 92 118, 135 112
+          C 158 107, 173 100, 178 98
+          C 168 100, 152 106, 126 102
+          C 96 96, 72 82, 68 66
+          C 64 46, 84 30, 110 28
+          C 140 26, 165 50, 173 80
+          Z
+        " fill="#f2b8cc" fill-opacity="0.45" stroke="#c07898" stroke-width="2.2" stroke-linejoin="round"/>
+        <!-- Left loop satin sheen -->
+        <path d="M 155 22 Q 118 12 86 26" stroke="#fce4ee" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.5"/>
+        <path d="M 148 46 Q 120 36 96 46" stroke="#fce4ee" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.3"/>
+
+        <!-- ===== RIGHT LOOP (mirror) ===== -->
+        <path d="
+          M 202 82
+          C 218 55, 262 10, 306 20
+          C 342 28, 355 62, 340 90
+          C 328 112, 288 118, 245 112
+          C 222 107, 207 100, 202 98
+          C 212 100, 228 106, 254 102
+          C 284 96, 308 82, 312 66
+          C 316 46, 296 30, 270 28
+          C 240 26, 215 50, 207 80
+          Z
+        " fill="#f2b8cc" fill-opacity="0.45" stroke="#c07898" stroke-width="2.2" stroke-linejoin="round"/>
+        <!-- Right loop satin sheen -->
+        <path d="M 225 22 Q 262 12 294 26" stroke="#fce4ee" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.5"/>
+        <path d="M 232 46 Q 260 36 284 46" stroke="#fce4ee" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.3"/>
+
+        <!-- ===== KNOT ===== -->
+        <ellipse cx="190" cy="90" rx="18" ry="14" fill="#dfa0b8"/>
+        <ellipse cx="190" cy="90" rx="18" ry="14" stroke="#c07898" stroke-width="2" fill="none"/>
+        <!-- Knot wrinkle lines -->
+        <path d="M 175 85 Q 190 78 205 85" stroke="#a86080" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+        <path d="M 175 95 Q 190 102 205 95" stroke="#a86080" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+        <!-- Knot shine -->
+        <ellipse cx="184" cy="83" rx="7" ry="4" fill="#fce4ee" opacity="0.55" transform="rotate(-15 184 83)"/>
+
+      </svg>
+    </div>
+
+    <div class="header-right">
+      <button onclick="openAdd()">+ New Note</button>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="main">
+    <h2 class="page-title">Simple Quick Notes</h2>
+    <p class="page-subtitle">A card-style app for quick notes, pinned ideas, and easy archiving — just like Google Keep.</p>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab active" data-tab="pinned" onclick="setTab('pinned')">
+        📌 Pinned Notes
+      </button>
+      <button class="tab" data-tab="all" onclick="setTab('all')">
+        🗒️ All Notes
+      </button>
+      <button class="tab" data-tab="archived" onclick="setTab('archived')">
+        📦 Archived
+      </button>
+      <button class="tab" data-tab="prompts" onclick="setTab('prompts')">
+        ✍️ Writing Prompts
+      </button>
+      <div class="tab-actions">
+        <button title="Sort">↕</button>
+        <button title="Search" onclick="alert('Search coming soon!')">🔍</button>
+      </div>
+    </div>
+
+    <!-- Grid -->
+    <div class="notes-grid" id="notes-grid">
+      <div class="empty-state"><p>Loading notes...</p></div>
+    </div>
+  </main>
+
+  <!-- Writing Page -->
+  <div class="writing-overlay" id="writing-overlay">
+    <div class="writing-page">
+      <div class="writing-header">
+        <button class="writing-back" onclick="closeWriting()">← Back</button>
+        <button class="writing-save" onclick="saveWriting()">Save Note</button>
+      </div>
+      <div class="writing-prompt-label">✍️ Your Prompt</div>
+      <div class="writing-prompt-text" id="writing-prompt-text"></div>
+      <input class="writing-title-input" id="writing-title" placeholder="Give your note a title..." />
+      <textarea class="writing-area" id="writing-area" placeholder="Start writing here... let the words flow 🌸"></textarea>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modal">
+    <div class="modal">
+      <h2 id="modal-title">New Note</h2>
+      <form id="note-form">
+        <input id="f-title" type="text" placeholder="Title" required />
+        <textarea id="f-content" placeholder="Write your note here..."></textarea>
+        <select id="f-tag">
+          <option value="">No tag</option>
+          <option value="Idea">💡 Idea</option>
+          <option value="Work">💼 Work</option>
+          <option value="Personal">👤 Personal</option>
+          <option value="To-Do">✅ To-Do</option>
+        </select>
+        <label class="pin-toggle">
+          <input type="checkbox" id="f-pinned" />
+          Pin this note
+        </label>
+        <div class="modal-actions">
+          <button type="button" class="btn-cancel" onclick="closeModal()">Cancel</button>
+          <button type="submit" class="btn-save">Save Note</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
