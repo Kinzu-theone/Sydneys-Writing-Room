@@ -212,6 +212,42 @@ modal.addEventListener("click", (e) => {
 
 fetchNotes();
 spawnSparkles();
+spawnFooterDragon();
+
+function spawnFooterDragon() {
+  setTimeout(_runDragon, 1500);
+}
+
+function _runDragon() {
+  const el = document.createElement('div');
+  el.id = 'footer-dragon';
+  el.innerHTML = `<svg width="260" height="160" viewBox="0 0 260 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M18 82 Q-10 68 -35 58 Q-22 74 -38 80 Q-22 86 -35 102 Q-10 92 18 86Z" fill="#ff6600"/>
+    <path d="M18 82 Q-6 70 -22 64 Q-10 78 -24 82 Q-10 86 18 85Z" fill="#ffdd00" opacity="0.9"/>
+    <path d="M210 100 Q240 94 258 78 Q250 66 236 72 Q224 66 210 82Z" fill="#7b2fd4"/>
+    <path d="M196 102 Q228 96 250 82 Q260 74 256 62 Q240 58 226 66 Q210 64 198 80Z" fill="#9044e0"/>
+    <ellipse cx="138" cy="102" rx="78" ry="38" fill="#7b2fd4"/>
+    <ellipse cx="126" cy="114" rx="56" ry="22" fill="#b060f0"/>
+    <path d="M128 80 Q108 30 64 8 Q88 42 106 66Z" fill="#9933dd" opacity="0.9"/>
+    <path d="M128 80 Q148 26 190 6 Q168 40 150 66Z" fill="#9933dd" opacity="0.9"/>
+    <path d="M128 80 Q108 30 64 8" stroke="#5a00aa" stroke-width="1.5" fill="none" opacity="0.5"/>
+    <path d="M128 80 Q148 26 190 6" stroke="#5a00aa" stroke-width="1.5" fill="none" opacity="0.5"/>
+    <path d="M74 96 Q54 88 40 80" stroke="#7b2fd4" stroke-width="26" stroke-linecap="round" fill="none"/>
+    <ellipse cx="32" cy="76" rx="32" ry="23" fill="#7b2fd4"/>
+    <path d="M8 78 Q-4 76 -8 68 Q-4 60 10 64 Q20 60 30 68Z" fill="#5a00aa"/>
+    <path d="M42 56 Q48 38 55 30" stroke="#5a00aa" stroke-width="5" stroke-linecap="round" fill="none"/>
+    <path d="M34 53 Q38 36 42 27" stroke="#5a00aa" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M6 76 Q2 86 10 92 Q24 96 40 90 Q50 86 52 80" fill="#5a00aa"/>
+    <path d="M12 78 L9 89 L16 79Z" fill="white"/>
+    <path d="M24 76 L22 88 L29 77Z" fill="white"/>
+    <circle cx="28" cy="68" r="9" fill="#1a0440"/>
+    <circle cx="28" cy="68" r="6" fill="#ffdd00"/>
+    <ellipse cx="28" cy="68" rx="2.5" ry="5" fill="#0a0220"/>
+    <circle cx="30" cy="65" r="1.8" fill="white" opacity="0.9"/>
+  </svg>`;
+  document.body.appendChild(el);
+  el.addEventListener('animationend', () => el.remove());
+}
 
 function spawnSparkles() {
   const colors = ['#ffd700', '#ffec6e', '#ffe066', '#fbbf24', '#f59e0b', '#fff8dc', '#fffacd'];
@@ -221,7 +257,6 @@ function spawnSparkles() {
   for (let i = 0; i < count; i++) {
     const el = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     el.setAttribute('class', 'sparkle');
-
     const size = 24 + Math.random() * 36;
     const x = Math.random() * window.innerWidth;
     const y = Math.random() * headerH;
@@ -229,25 +264,15 @@ function spawnSparkles() {
     const dur = 1.0 + Math.random() * 1.0;
     const color = colors[Math.floor(Math.random() * colors.length)];
     const r = size / 2;
-    // 4-pointed star: long axis points + short diagonal points
     const p = `${r},0 ${r*0.12},${r*0.12} 0,${r} ${-r*0.12},${r*0.12} ${-r},0 ${-r*0.12},${-r*0.12} 0,${-r} ${r*0.12},${-r*0.12}`;
-
     el.setAttribute('width', size);
     el.setAttribute('height', size);
     el.setAttribute('viewBox', `${-r} ${-r} ${size} ${size}`);
-    el.style.cssText = `
-      position:fixed; left:${x}px; top:${y}px;
-      overflow:visible; pointer-events:none; z-index:999;
-      --delay:${delay}s; --dur:${dur}s;
-      animation: sparklePop ${dur}s ease-out ${delay}s 1 forwards;
-      opacity:0;
-    `;
-
+    el.style.cssText = `position:fixed;left:${x}px;top:${y}px;overflow:visible;pointer-events:none;z-index:999;animation:sparklePop ${dur}s ease-out ${delay}s 1 forwards;opacity:0;`;
     const poly = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
     poly.setAttribute('points', p);
     poly.setAttribute('fill', color);
     el.appendChild(poly);
-
     document.body.appendChild(el);
     setTimeout(() => el.remove(), (delay + dur + 0.1) * 1000);
   }
