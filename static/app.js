@@ -247,6 +247,61 @@ function _runDragon() {
   </svg>`;
   document.body.appendChild(el);
   el.addEventListener('animationend', () => el.remove());
+
+  const canvas = document.getElementById('fire-canvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  const particles = [];
+  let fireActive = true;
+
+  function Particle(x, y) {
+    this.x = x + (Math.random() - 0.5) * 40;
+    this.y = y + Math.random() * 10;
+    this.vx = (Math.random() - 0.5) * 2;
+    this.vy = -(1 + Math.random() * 3.5);
+    this.life = 1;
+    this.decay = 0.006 + Math.random() * 0.01;
+    this.size = 8 + Math.random() * 22;
+  }
+
+  function fireLoop() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    if (fireActive && el.isConnected) {
+      const rect = el.getBoundingClientRect();
+      const fireX = rect.left + 20;
+      const fireY = rect.bottom - 20;
+      for (let i = 0; i < 8; i++) particles.push(new Particle(fireX, fireY));
+    }
+
+    for (let i = particles.length - 1; i >= 0; i--) {
+      const p = particles[i];
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vy *= 0.97;
+      p.life -= p.decay;
+      if (p.life <= 0) { particles.splice(i, 1); continue; }
+      const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.size);
+      grad.addColorStop(0,   `rgba(255, 240, 180, ${p.life})`);
+      grad.addColorStop(0.4, `rgba(255, 100, 10, ${p.life * 0.85})`);
+      grad.addColorStop(1,   `rgba(80, 0, 0, 0)`);
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fillStyle = grad;
+      ctx.fill();
+    }
+
+    if (fireActive || particles.length > 0) requestAnimationFrame(fireLoop);
+    else ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+
+  setTimeout(() => {
+    fireActive = false;
+  }, 1500 + 4500 + 5000);
+
+  setTimeout(fireLoop, 1500);
 }
 
 function spawnSparkles() {
