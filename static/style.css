@@ -92,7 +92,7 @@ body {
 
 @keyframes dragonFly {
   from { transform: translateX(calc(100vw + 20px)); }
-  to   { transform: translateX(-320px); }
+  to   { transform: translateX(-420px); }
 }
 
 #footer-dragon svg {
@@ -107,6 +107,23 @@ body {
 @keyframes wingFlap {
   from { transform: rotate(-14deg) scaleY(1);   }
   to   { transform: rotate(12deg) scaleY(0.7);  }
+}
+
+.baby-dragon-wrapper {
+  position: fixed;
+  z-index: 9997;
+  pointer-events: none;
+  filter: drop-shadow(0 0 8px rgba(255, 80, 0, 0.7));
+  transform: translateX(calc(100vw + 20px));
+}
+
+.baby-bob {
+  animation: babyBob 0.42s ease-in-out infinite alternate;
+}
+
+@keyframes babyBob {
+  from { transform: translateY(0px) rotate(-3deg); }
+  to   { transform: translateY(-10px) rotate(3deg); }
 }
 
 /* Sparkles */

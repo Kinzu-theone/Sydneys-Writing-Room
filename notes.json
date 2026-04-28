@@ -8,5 +8,15 @@
     "pinned": false,
     "archived": false,
     "created_at": "April 21, 2026 01:00 PM"
+  },
+  {
+    "id": "bb94a907-8adb-45aa-b5af-2f77d7d1aa8c",
+    "title": "hey",
+    "content": "whats up",
+    "tag": "Idea",
+    "color": "#2d2d2d",
+    "pinned": false,
+    "archived": true,
+    "created_at": "April 26, 2026 12:02 PM"
   }
 ]

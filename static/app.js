@@ -221,32 +221,179 @@ function spawnFooterDragon() {
 function _runDragon() {
   const el = document.createElement('div');
   el.id = 'footer-dragon';
-  el.innerHTML = `<svg width="260" height="160" viewBox="0 0 260 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M18 82 Q-10 68 -35 58 Q-22 74 -38 80 Q-22 86 -35 102 Q-10 92 18 86Z" fill="#ff6600"/>
-    <path d="M18 82 Q-6 70 -22 64 Q-10 78 -24 82 Q-10 86 18 85Z" fill="#ffdd00" opacity="0.9"/>
-    <path d="M210 100 Q240 94 258 78 Q250 66 236 72 Q224 66 210 82Z" fill="#7b2fd4"/>
-    <path d="M196 102 Q228 96 250 82 Q260 74 256 62 Q240 58 226 66 Q210 64 198 80Z" fill="#9044e0"/>
-    <ellipse cx="138" cy="102" rx="78" ry="38" fill="#7b2fd4"/>
-    <ellipse cx="126" cy="114" rx="56" ry="22" fill="#b060f0"/>
-    <path d="M128 80 Q108 30 64 8 Q88 42 106 66Z" fill="#9933dd" opacity="0.9"/>
-    <path d="M128 80 Q148 26 190 6 Q168 40 150 66Z" fill="#9933dd" opacity="0.9"/>
-    <path d="M128 80 Q108 30 64 8" stroke="#5a00aa" stroke-width="1.5" fill="none" opacity="0.5"/>
-    <path d="M128 80 Q148 26 190 6" stroke="#5a00aa" stroke-width="1.5" fill="none" opacity="0.5"/>
-    <path d="M74 96 Q54 88 40 80" stroke="#7b2fd4" stroke-width="26" stroke-linecap="round" fill="none"/>
-    <ellipse cx="32" cy="76" rx="32" ry="23" fill="#7b2fd4"/>
-    <path d="M8 78 Q-4 76 -8 68 Q-4 60 10 64 Q20 60 30 68Z" fill="#5a00aa"/>
-    <path d="M42 56 Q48 38 55 30" stroke="#5a00aa" stroke-width="5" stroke-linecap="round" fill="none"/>
-    <path d="M34 53 Q38 36 42 27" stroke="#5a00aa" stroke-width="4" stroke-linecap="round" fill="none"/>
-    <path d="M6 76 Q2 86 10 92 Q24 96 40 90 Q50 86 52 80" fill="#5a00aa"/>
-    <path d="M12 78 L9 89 L16 79Z" fill="white"/>
-    <path d="M24 76 L22 88 L29 77Z" fill="white"/>
-    <circle cx="28" cy="68" r="9" fill="#1a0440"/>
-    <circle cx="28" cy="68" r="6" fill="#ffdd00"/>
-    <ellipse cx="28" cy="68" rx="2.5" ry="5" fill="#0a0220"/>
-    <circle cx="30" cy="65" r="1.8" fill="white" opacity="0.9"/>
+  el.innerHTML = `<svg width="320" height="180" viewBox="0 0 320 180" overflow="visible" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+    <!-- TAIL -->
+    <path d="M320 112 Q295 100 270 110 Q250 118 235 114" stroke="#7a1515" stroke-width="20" stroke-linecap="round" fill="none"/>
+    <path d="M235 114 Q218 110 205 120" stroke="#7a1515" stroke-width="22" stroke-linecap="round" fill="none"/>
+    <path d="M320 112 Q295 98 270 108 Q250 116 235 112" stroke="#b02020" stroke-width="9" stroke-linecap="round" fill="none" opacity="0.4"/>
+    <path d="M320 112 Q332 102 328 92 Q322 84 314 90 Q308 84 308 94 Q304 104 316 110Z" fill="#300808"/>
+    <path d="M300 98 L303 84 L309 98Z" fill="#4a0808" stroke="#300808" stroke-width="1.5"/>
+    <path d="M283 106 L286 92 L292 106Z" fill="#4a0808" stroke="#300808" stroke-width="1.5"/>
+    <path d="M267 112 L270 99 L276 112Z" fill="#4a0808" stroke="#300808" stroke-width="1.5"/>
+    <path d="M251 115 L254 102 L259 115Z" fill="#4a0808" stroke="#300808" stroke-width="1"/>
+
+    <!-- BODY -->
+    <ellipse cx="195" cy="130" rx="76" ry="42" fill="#7a1515"/>
+    <ellipse cx="188" cy="122" rx="58" ry="28" fill="#b02020" opacity="0.35"/>
+    <ellipse cx="190" cy="145" rx="53" ry="20" fill="#d4603a"/>
+    <path d="M148 144 Q160 138 172 144 Q184 138 196 144 Q208 138 220 144 Q232 138 238 144" stroke="#b04428" stroke-width="1.5" fill="none" opacity="0.7"/>
+    <path d="M152 153 Q164 147 176 153 Q188 147 200 153 Q212 147 224 153 Q232 147 236 153" stroke="#b04428" stroke-width="1.5" fill="none" opacity="0.6"/>
+    <path d="M158 120 Q163 114 168 120 Q173 114 178 120 Q183 114 188 120 Q193 114 198 120 Q203 114 208 120 Q213 114 218 120 Q223 114 228 120" stroke="#300808" stroke-width="1.5" fill="none" opacity="0.45"/>
+    <path d="M155 132 Q160 126 165 132 Q170 126 175 132 Q180 126 185 132 Q190 126 195 132 Q200 126 205 132 Q210 126 215 132 Q220 126 225 132 Q230 126 235 132" stroke="#300808" stroke-width="1.5" fill="none" opacity="0.45"/>
+
+    <!-- BACK WING (behind body) -->
+    <path d="M205 117 L242 32 L270 16 L262 48 L298 22 L284 60 L320 42 L304 82 L318 70 L308 102 L215 127 Z" fill="#4a0808" opacity="0.82"/>
+    <path d="M208 120 L245 35" stroke="#300808" stroke-width="3.5" fill="none"/>
+    <path d="M211 118 L272 18" stroke="#300808" stroke-width="3" fill="none"/>
+    <path d="M214 116 L300 25" stroke="#300808" stroke-width="2.5" fill="none"/>
+    <path d="M217 114 L320 44" stroke="#300808" stroke-width="2" fill="none"/>
+    <path d="M228 107 Q258 62 272 20" stroke="#300808" stroke-width="1" fill="none" opacity="0.4"/>
+    <path d="M240 102 Q272 68 304 30" stroke="#300808" stroke-width="1" fill="none" opacity="0.4"/>
+    <path d="M242 32 L270 16 L298 22 L320 42 L308 102" stroke="#7a1515" stroke-width="2" fill="none" opacity="0.55"/>
+
+    <!-- FRONT WING (in front) -->
+    <path d="M172 112 L184 36 L208 13 L204 46 L234 20 L224 56 L252 38 L240 76 L248 66 L240 96 L182 120 Z" fill="#5a0c0c" opacity="0.88"/>
+    <path d="M174 114 L187 38" stroke="#300808" stroke-width="3.5" fill="none"/>
+    <path d="M177 112 L210 15" stroke="#300808" stroke-width="3" fill="none"/>
+    <path d="M180 110 L236 22" stroke="#300808" stroke-width="2.5" fill="none"/>
+    <path d="M182 108 L252 40" stroke="#300808" stroke-width="2" fill="none"/>
+    <path d="M190 107 Q210 70 212 18" stroke="#300808" stroke-width="1" fill="none" opacity="0.4"/>
+    <path d="M202 104 Q224 74 240 30" stroke="#300808" stroke-width="1" fill="none" opacity="0.4"/>
+    <path d="M184 36 L208 13 L234 20 L252 38 L240 96" stroke="#7a1515" stroke-width="2" fill="none" opacity="0.55"/>
+
+    <!-- NECK -->
+    <path d="M150 122 Q118 110 94 102 Q70 96 48 92" stroke="#7a1515" stroke-width="30" stroke-linecap="round" fill="none"/>
+    <path d="M150 120 Q118 108 94 100 Q70 94 48 90" stroke="#b02020" stroke-width="13" stroke-linecap="round" fill="none" opacity="0.3"/>
+    <path d="M139 106 L143 90 L149 106Z" fill="#4a0808" stroke="#300808" stroke-width="1.5"/>
+    <path d="M123 102 L127 86 L133 102Z" fill="#4a0808" stroke="#300808" stroke-width="1.5"/>
+    <path d="M107 98 L111 82 L117 98Z" fill="#4a0808" stroke="#300808" stroke-width="1.5"/>
+    <path d="M91 94 L94 79 L100 93Z" fill="#4a0808" stroke="#300808" stroke-width="1"/>
+    <path d="M74 91 L77 76 L83 90Z" fill="#4a0808" stroke="#300808" stroke-width="1"/>
+
+    <!-- HEAD (upper jaw) -->
+    <ellipse cx="36" cy="90" rx="35" ry="24" fill="#7a1515"/>
+    <path d="M36 80 Q16 76 2 78 Q-6 80 -8 87 Q-6 92 2 94 Q16 96 36 97Z" fill="#7a1515"/>
+    <path d="M36 82 Q18 78 4 80 Q-2 82 -4 87" stroke="#b02020" stroke-width="3" fill="none" opacity="0.35" stroke-linecap="round"/>
+    <path d="M8 82 Q13 78 18 82 Q23 78 28 82 Q33 78 36 82" stroke="#300808" stroke-width="1.5" fill="none" opacity="0.45"/>
+
+    <!-- LOWER JAW -->
+    <path d="M2 94 Q10 106 28 112 Q38 116 50 114 Q58 110 60 102 Q54 98 36 97 Q16 96 2 94Z" fill="#5a0808"/>
+    <path d="M4 94 Q12 104 30 110 Q40 114 48 112" stroke="#8a2020" stroke-width="2" fill="none" opacity="0.35" stroke-linecap="round"/>
+
+    <!-- MOUTH DARKNESS -->
+    <path d="M2 94 Q20 98 36 97 Q36 102 26 106 Q12 103 2 94Z" fill="#150000" opacity="0.75"/>
+
+    <!-- TEETH UPPER -->
+    <path d="M6 94 L3 104 L10 94Z" fill="#f0ece0"/>
+    <path d="M18 96 L16 106 L22 96Z" fill="#f0ece0"/>
+    <path d="M30 97 L29 107 L34 97Z" fill="#f0ece0"/>
+    <!-- TEETH LOWER -->
+    <path d="M10 104 L8 94 L15 104Z" fill="#e8e4d8"/>
+    <path d="M23 108 L22 98 L28 108Z" fill="#e8e4d8"/>
+
+    <!-- TONGUE (forked) -->
+    <path d="M-4 90 Q-15 88 -22 84" stroke="#cc2244" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M-22 84 Q-28 80 -30 76" stroke="#cc2244" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <path d="M-22 84 Q-28 88 -30 92" stroke="#cc2244" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+    <!-- NOSTRIL -->
+    <ellipse cx="-3" cy="82" rx="2.5" ry="2" fill="#300808" transform="rotate(-15 -3 82)"/>
+
+    <!-- EYE RIDGE / BROW -->
+    <path d="M40 78 Q50 72 60 74" stroke="#300808" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+    <!-- EYE -->
+    <ellipse cx="48" cy="80" rx="7.5" ry="6.5" fill="#0a0200"/>
+    <ellipse cx="48" cy="80" rx="5.8" ry="5" fill="#e08010"/>
+    <ellipse cx="48" cy="80" rx="2" ry="4.5" fill="#0a0200"/>
+    <circle cx="49.5" cy="77" r="1.5" fill="white" opacity="0.85"/>
+
+    <!-- HORNS -->
+    <path d="M58 74 Q65 57 61 44" stroke="#300808" stroke-width="7" stroke-linecap="round" fill="none"/>
+    <path d="M58 74 Q67 57 65 44" stroke="#5a0808" stroke-width="3.5" stroke-linecap="round" fill="none" opacity="0.55"/>
+    <path d="M48 72 Q52 58 48 48" stroke="#300808" stroke-width="5" stroke-linecap="round" fill="none"/>
+
+    <!-- EAR FRILL -->
+    <path d="M34 78 Q24 67 18 60 Q28 70 34 78Z" fill="#4a0808"/>
+    <path d="M34 78 Q22 70 16 66" stroke="#300808" stroke-width="1.5" fill="none" opacity="0.5"/>
+
+    <!-- FIRE BREATH (mouth to left) -->
+    <path d="M-8 88 Q-42 72 -72 60 Q-56 76 -74 82 Q-56 88 -72 104 Q-42 94 -8 92Z" fill="#ff6600" opacity="0.9"/>
+    <path d="M-8 88 Q-36 74 -56 68 Q-42 80 -56 84 Q-42 88 -8 91Z" fill="#ffcc00" opacity="0.85"/>
+    <path d="M-8 88 Q-26 80 -38 78 Q-28 83 -38 86 Q-28 89 -8 90Z" fill="#fff4a0" opacity="0.8"/>
+    <path d="M-5 88 Q-15 84 -22 84 Q-15 86 -22 88 Q-15 90 -5 89Z" fill="white" opacity="0.65"/>
+
+    <!-- FRONT CLAW -->
+    <path d="M156 158 Q145 167 138 173" stroke="#5a0808" stroke-width="8" stroke-linecap="round" fill="none"/>
+    <path d="M138 173 Q129 179 123 183" stroke="#300808" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <path d="M138 173 Q131 180 129 186" stroke="#300808" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <path d="M138 173 Q135 181 135 188" stroke="#300808" stroke-width="3" stroke-linecap="round" fill="none"/>
+
   </svg>`;
   document.body.appendChild(el);
   el.addEventListener('animationend', () => el.remove());
+
+  const babyConfigs = [
+    { delay: 2.3, bottom: 108, bobDur: '0.38s', scale: 1.0 },
+    { delay: 2.9, bottom:  96, bobDur: '0.44s', scale: 0.85 },
+    { delay: 3.5, bottom: 112, bobDur: '0.36s', scale: 0.72 },
+  ];
+
+  const babySVG = `<svg width="90" height="75" viewBox="0 0 90 75" overflow="visible" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M90 38 Q78 34 70 40 Q64 45 60 42" stroke="#b02020" stroke-width="7" stroke-linecap="round" fill="none"/>
+    <path d="M90 38 Q96 32 93 27 Q89 23 85 27 Q81 23 81 29 Q79 35 87 38Z" fill="#7a1515"/>
+    <path d="M78 32 L80 24 L84 32Z" fill="#4a0808" stroke="#300808" stroke-width="1"/>
+    <path d="M68 37 L70 29 L74 37Z" fill="#4a0808" stroke="#300808" stroke-width="1"/>
+    <ellipse cx="56" cy="46" rx="24" ry="17" fill="#c23030"/>
+    <ellipse cx="54" cy="53" rx="16" ry="9" fill="#e87050"/>
+    <path d="M40 42 Q44 38 48 42 Q52 38 56 42 Q60 38 64 42 Q68 38 72 42" stroke="#300808" stroke-width="1" fill="none" opacity="0.4"/>
+    <path d="M60 38 L66 16 L76 12 L72 24 L82 15 L76 32 L82 26 L78 42 L64 44Z" fill="#7a1515" opacity="0.85"/>
+    <path d="M62 40 L68 18" stroke="#300808" stroke-width="2" fill="none"/>
+    <path d="M64 39 L76 14" stroke="#300808" stroke-width="1.5" fill="none"/>
+    <path d="M66 37 L82 17" stroke="#300808" stroke-width="1" fill="none"/>
+    <path d="M66 16 L76 12 L82 15 L78 42" stroke="#7a1515" stroke-width="1.5" fill="none" opacity="0.5"/>
+    <path d="M36 44 Q26 40 16 38" stroke="#c23030" stroke-width="13" stroke-linecap="round" fill="none"/>
+    <path d="M36 43 Q26 39 16 37" stroke="#d85050" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.25"/>
+    <path d="M30 36 L32 28 L36 36Z" fill="#4a0808" stroke="#300808" stroke-width="1"/>
+    <path d="M22 34 L24 26 L28 34Z" fill="#4a0808" stroke="#300808" stroke-width="1"/>
+    <ellipse cx="11" cy="36" rx="13" ry="10" fill="#c23030"/>
+    <path d="M10 32 Q0 30 -5 32 Q-9 34 -9 38 Q-7 42 0 44 Q8 46 12 44Z" fill="#c23030"/>
+    <path d="M10 34 Q0 32 -5 34" stroke="#d85050" stroke-width="1.5" fill="none" opacity="0.3"/>
+    <ellipse cx="-6" cy="37" rx="1.8" ry="1.4" fill="#7a1515"/>
+    <ellipse cx="-6" cy="41" rx="1.8" ry="1.4" fill="#7a1515"/>
+    <path d="M19 29 Q18 11 20 4 Q22 0 25 4 Q27 11 25 29Z" fill="#c23030" stroke="#7a1515" stroke-width="1.5"/>
+    <path d="M19 29 Q18 13 20 7 Q22 4 24 7 Q25 13 24 29Z" fill="#f0a080" opacity="0.55"/>
+    <path d="M10 28 Q8 10 10 3 Q13 -1 16 3 Q18 10 16 28Z" fill="#c23030" stroke="#7a1515" stroke-width="1.5"/>
+    <path d="M10 28 Q9 12 11 5 Q13 2 15 5 Q16 12 15 28Z" fill="#f0a080" opacity="0.55"/>
+    <ellipse cx="14" cy="34" rx="4" ry="3.5" fill="#0a0200"/>
+    <ellipse cx="14" cy="34" rx="2.8" ry="2.5" fill="#e08010"/>
+    <ellipse cx="14" cy="34" rx="0.9" ry="2" fill="#0a0200"/>
+    <circle cx="15" cy="32.5" r="0.8" fill="white" opacity="0.9"/>
+    <path d="M-9 37 Q-20 33 -28 31 Q-22 36 -28 38 Q-22 40 -9 39Z" fill="#ff8800" opacity="0.85"/>
+    <path d="M-9 37 Q-18 34 -22 33 Q-18 36 -22 38 Q-18 39 -9 38Z" fill="#ffdd00" opacity="0.9"/>
+    <path d="M44 58 Q43 66 44 72" stroke="#9a2020" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M52 60 Q52 68 53 74" stroke="#9a2020" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <ellipse cx="44" cy="73" rx="4" ry="2.5" fill="#3a0808"/>
+    <ellipse cx="53" cy="75" rx="4" ry="2.5" fill="#3a0808"/>
+    <path d="M22 32 Q21 24 23 18" stroke="#7a1515" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <path d="M18 31 Q16 23 18 17" stroke="#7a1515" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  </svg>`;
+
+  babyConfigs.forEach(cfg => {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'baby-dragon-wrapper';
+    wrapper.style.bottom = cfg.bottom + 'px';
+    wrapper.style.animation = `dragonFly 4.5s linear ${cfg.delay}s 1 forwards`;
+    const bobDiv = document.createElement('div');
+    bobDiv.className = 'baby-bob';
+    bobDiv.style.animationDuration = cfg.bobDur;
+    bobDiv.style.transform = `scale(${cfg.scale})`;
+    bobDiv.style.transformOrigin = 'left center';
+    bobDiv.innerHTML = babySVG;
+    wrapper.appendChild(bobDiv);
+    document.body.appendChild(wrapper);
+    wrapper.addEventListener('animationend', () => wrapper.remove());
+  });
 
   const canvas = document.getElementById('fire-canvas');
   const ctx = canvas.getContext('2d');
