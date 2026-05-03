@@ -42,6 +42,7 @@ async def index(request: Request):
     return templates.TemplateResponse(request=request, name="index.html")
 
 
+
 @app.get("/api/notes")
 async def get_notes():
     return load_notes()
